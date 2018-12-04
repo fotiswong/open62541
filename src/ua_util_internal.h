@@ -16,7 +16,7 @@
 
 #define UA_INTERNAL
 #include "ua_types.h"
-#include "../deps/queue.h"
+#include "open62541_queue.h"
 
 _UA_BEGIN_DECLS
 
