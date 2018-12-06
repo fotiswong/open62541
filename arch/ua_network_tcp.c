@@ -90,7 +90,7 @@ connection_recv(UA_Connection *connection, UA_ByteString *response,
         UA_fd_set(connection->sockfd, &fdset);
         UA_UInt32 timeout_usec = timeout * 1000;
         struct timeval tmptv = {(long int)(timeout_usec / 1000000),
-                                (long int)(timeout_usec % 1000000)};
+                                (int)(timeout_usec % 1000000)};
         int resultsize = UA_select(connection->sockfd+1, &fdset, NULL,
                                 NULL, &tmptv);
 
@@ -678,7 +678,7 @@ UA_StatusCode UA_ClientConnectionTCP_poll(UA_Client *client, void *data) {
         UA_UInt32 timeout_usec = (tcpConnection->timeout - timeSinceStart)
                         * 1000;
         struct timeval tmptv = { (long int) (timeout_usec / 1000000),
-                        (long int) (timeout_usec % 1000000) };
+                        (int) (timeout_usec % 1000000) };
 
         int resultsize = UA_select((UA_Int32) (clientsockfd + 1), NULL, &fdset,
         NULL, &tmptv);
@@ -726,7 +726,7 @@ UA_StatusCode UA_ClientConnectionTCP_poll(UA_Client *client, void *data) {
     int sso_result = setsockopt(connection->sockfd, SOL_SOCKET,
                     SO_NOSIGPIPE, (void*)&val, sizeof(val));
     if(sso_result < 0)
-    UA_LOG_WARNING(UA_Log_Stdout, UA_LOGCATEGORY_NETWORK,
+    UA_LOG_WARNING(&config->logger, UA_LOGCATEGORY_NETWORK,
                     "Couldn't set SO_NOSIGPIPE");
 #endif
 
@@ -931,7 +931,7 @@ UA_ClientConnectionTCP(UA_ConnectionConfig config, const char *endpointUrl,
             UA_fd_set(clientsockfd, &fdset);
             UA_DateTime timeout_usec = (dtTimeout - timeSinceStart) / UA_DATETIME_USEC;
             struct timeval tmptv = {(long int) (timeout_usec / 1000000),
-                                    (long int) (timeout_usec % 1000000)};
+                                    (int) (timeout_usec % 1000000)};
 
             int resultsize = UA_select((UA_Int32)(clientsockfd + 1), NULL, &fdset, NULL, &tmptv);
 #endif
