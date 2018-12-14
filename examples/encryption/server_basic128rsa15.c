@@ -4,7 +4,10 @@
 #include <signal.h>
 #include <stdio.h>
 #include <errno.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 static UA_ByteString loadFile(const char *const path) {
     UA_ByteString fileContents = UA_STRING_NULL;

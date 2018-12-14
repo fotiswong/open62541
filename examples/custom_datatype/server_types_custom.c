@@ -2,7 +2,10 @@
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. */
 
 #include <signal.h>
-#include <open62541.h>
+
+#include <ua_server.h>
+#include <ua_log_stdout.h>
+#include <ua_config_default.h>
 #include "custom_datatype.h"
 
 UA_Boolean running = true;

@@ -3,7 +3,11 @@
 
 #include <signal.h>
 #include <stdio.h>
-#include "open62541.h"
+
+#include <ua_client_highlevel.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
+#include <ua_client_subscriptions.h>
 
 #ifdef _MSC_VER
 #pragma warning(disable:4996) // warning C4996: 'UA_Client_Subscriptions_addMonitoredEvent': was declared deprecated

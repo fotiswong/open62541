@@ -2,7 +2,11 @@
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. */
 
 #include <stdio.h>
-#include "open62541.h"
+
+#include <ua_client_subscriptions.h>
+#include <ua_client_highlevel.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 #ifdef UA_ENABLE_SUBSCRIPTIONS
 static void

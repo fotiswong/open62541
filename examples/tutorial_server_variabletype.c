@@ -19,7 +19,10 @@
  */
 
 #include <signal.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 static UA_NodeId pointTypeId;
 

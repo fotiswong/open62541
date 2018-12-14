@@ -4,7 +4,10 @@
 #include <signal.h>
 #include <stdio.h>
 
-#include "open62541.h"
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_plugin_access_control.h>
+#include <ua_log_stdout.h>
 
 static UA_Boolean
 allowAddNode(UA_Server *server, UA_AccessControl *ac,

@@ -8,7 +8,9 @@
 
 #include <stdio.h>
 #include <signal.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
 
 UA_Boolean running = true;
 static void stopHandler(int sig) {

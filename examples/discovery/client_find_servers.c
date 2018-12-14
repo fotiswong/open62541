@@ -7,7 +7,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <open62541.h>
+
+#include <ua_client.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 UA_Logger logger = UA_Log_Stdout;
 

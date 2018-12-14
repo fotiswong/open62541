@@ -7,7 +7,9 @@
 
 #include <stdio.h>
 
-#include "open62541.h"
+#include <ua_client.h>
+#include <ua_config_default.h>
+#include <ua_client_highlevel.h>
 
 int main(void) {
     UA_Client *client = UA_Client_new(UA_ClientConfig_default);

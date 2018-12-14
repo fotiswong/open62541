@@ -17,7 +17,11 @@
  * sure to compare with the type definitions in ``ua_types.h``. */
 
 #include <assert.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
+
 
 static void
 variables_basic(void) {

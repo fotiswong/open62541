@@ -2,7 +2,10 @@
  * See http://creativecommons.org/publicdomain/zero/1.0/ for more information. */
 
 #include <signal.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 static void
 testCallback(UA_Server *server, void *data) {

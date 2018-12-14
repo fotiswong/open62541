@@ -9,7 +9,10 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 #define DISCOVERY_SERVER_ENDPOINT "opc.tcp://localhost:4840"
 

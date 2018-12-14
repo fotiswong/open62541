@@ -10,7 +10,12 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "open62541.h"
+
+#include <ua_server.h>
+#include <ua_config_default.h>
+#include <ua_types.h>
+#include <ua_log_stdout.h>
+#include <string.h>
 
 UA_Logger logger = UA_Log_Stdout;
 UA_Boolean running = true;

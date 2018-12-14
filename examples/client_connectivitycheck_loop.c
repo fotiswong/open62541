@@ -14,8 +14,10 @@
 # define _BSD_SOURCE
 #endif
 
-#include "open62541.h"
 #include <signal.h>
+#include <ua_client.h>
+#include <ua_config_default.h>
+#include <ua_log_stdout.h>
 
 #ifdef _WIN32
 # include <windows.h>

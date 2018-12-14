@@ -226,7 +226,7 @@ UA_findDataTypeByBinary(const UA_NodeId *typeId);
 """ % (additionalHeaders))
     else:
         writeh("""
-#include "open62541.h"
+#include "ua_server.h"
 """)
     writeh("""
 #ifdef __cplusplus
