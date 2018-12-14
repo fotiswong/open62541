@@ -50,11 +50,19 @@ add_example(tutorial_client_events tutorial_client_events.c)
 
 add_example(server_ctt server_ctt.c)
 
+install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/server_ctt
+        DESTINATION bin
+        RENAME ua_server_ctt)
+
 ##################
 # Example Client #
 ##################
 
 add_example(client client.c)
+
+install(PROGRAMS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/client
+        DESTINATION bin
+        RENAME ua_client)
 
 add_example(client_connect_loop client_connect_loop.c)
 
